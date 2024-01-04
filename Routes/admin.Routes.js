@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const Student = require("../models/student.model");
 const { authenticateToken, checkAdminRole } = require("../middleware/auth");
 const {
   addStaff,
@@ -57,9 +56,6 @@ router.get(
   checkAdminRole,
   queryAnlytics
 );
-
-const AttendanceModel = require("../models/attendance.model");
-const StudentModel = require("../models/student.model");
 
 router.get('/absent-students',authenticateToken , checkAdminRole ,absentStudent );
 
